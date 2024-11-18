@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Result</h1>
+  <% if @test == false %>
+    <p>Sorry but <span style="font-weight: bold"><%= @word.upcase %></span> can't be build out of <%= @letters %></p>
+  <% elsif (@jword["found"] == false) || (@test == false) %>
+    <p>Sorry but <span style="font-weight: bold"><%= @word.upcase %></span> does not seem to be a valid English word...</p>
+  <% elsif @test && @jword["found"]%>
+    <p><span style="font-weight: bold">Congratulations! <%= @word.upcase %> is a valid English word!</span></p>
+  <% end %>
+
+  <%= link_to "play again", new_path %>
+</div>
